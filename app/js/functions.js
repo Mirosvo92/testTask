@@ -1,6 +1,7 @@
 (function () {
 
-    function counter(string, x, y) {
+    function counter(string) {
+        var stringArray = string.toUpperCase().match(/([a-zA-Z])\1*/g)||[];
         var rez = {};
         var argumentsLen = arguments.length - 1;
 
@@ -10,17 +11,16 @@
             }
         }
 
-        string.toUpperCase().split('').forEach( function (letter) {
-            if (Object.keys(rez).indexOf(letter) !== -1) {
-                rez[letter] += 1;
+        stringArray.forEach( function (letter) {
+            if (Object.keys(rez).indexOf(letter[0]) !== -1 && letter.length > 1) {
+                rez[letter[0]] += letter.length;
             }
         });
 
-        return JSON.parse(JSON.stringify(rez).toLowerCase());
-
+        return rez;
     }
 
-    // console.log(counter('hhyyffllxxxllxxyyhhhhhx', 'x', 'y', 'h'));
-    console.log(counter('XyxyXYxyXXyy', 'X', 'y'));
+    console.log(counter('hhyyffllxxxllxxyyhhhhhx', 'x', 'y', 'h'));
+    console.log(counter('xxxdxyyyYyyxxyx', 'x', 'y'));
 
 }());
