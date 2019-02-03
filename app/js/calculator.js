@@ -38,14 +38,12 @@
     };
 
     Calculator.prototype.sqrt = function () {
-        var rez = Math.sqrt(this.calculatorInput.value);
-        this.calculatorInput.value = rez;
+        this.calculatorInput.value = Math.sqrt(this.calculatorInput.value);
     };
 
     Calculator.prototype.in = function () {
         if (validateData(this.calculatorInput.value)) {
-            var rez = Math.log(this.calculatorInput.value);
-            this.calculatorInput.value = rez;
+            this.calculatorInput.value = Math.log(this.calculatorInput.value);
         }
     };
 
