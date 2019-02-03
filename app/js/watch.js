@@ -16,7 +16,6 @@
     };
 
     Watch.prototype.drawWatchFace = function () {
-
         this.watchContext.beginPath();
         this.watchContext.arc(0, 0, this.watchRadius, 0, 2 * Math.PI);
         this.watchContext.fillStyle = 'white';

@@ -50,27 +50,26 @@
     };
 
     Calculator.prototype.keypressData = function (event) {
-        _validateInputData(event.key);
-
-        function _validateInputData(value) {
-            var pattern = /^\d+$/;
-            if (!pattern.test(value)) {
-                event.preventDefault();
-            }
+        var pattern = /^\d+$/;
+        if (!pattern.test(value)) {
+            event.preventDefault();
         }
     };
 
     Calculator.prototype.inputData = function () {
         var calculatorInputLen = this.calculatorInput.value.length;
         var pattern = /^[^1-9]/;
+
         if (!calculatorInputLen || pattern.test(+this.calculatorInput.value)) {
-            this.sqrButton.disabled = true;
-            this.sqrtButton.disabled = true;
-            this.inButton.disabled = true;
+            toggleDisabledButton.call(this, true);
         } else {
-            this.sqrButton.disabled = false;
-            this.sqrtButton.disabled = false;
-            this.inButton.disabled = false;
+            toggleDisabledButton.call(this, false);
+        }
+
+        function toggleDisabledButton(state) {
+            this.sqrButton.disabled = state;
+            this.sqrtButton.disabled = state;
+            this.inButton.disabled = state;
         }
     };
 
