@@ -1,0 +1,13 @@
+body {
+  text-align: center;
+}
+
+.main-wrapper {
+  margin-top: 15px;
+}
+
+button {
+  &:disabled {
+    opacity: .1;
+  }
+}
