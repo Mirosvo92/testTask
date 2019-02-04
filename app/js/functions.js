@@ -22,5 +22,6 @@
 
     console.log(counter('hhyyffllxxxllxxyyhhhhhx', 'x', 'y', 'h'));
     console.log(counter('xxxdxyyyYyyxxyx', 'x', 'y'));
+    console.log(counter('xxxdfff', 'x', 'f'));
 
 }());

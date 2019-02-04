@@ -49,7 +49,7 @@
 
     Calculator.prototype.keypressData = function (event) {
         var pattern = /^\d+$/;
-        if (!pattern.test(value)) {
+        if (!pattern.test(event.key)) {
             event.preventDefault();
         }
     };
@@ -87,5 +87,5 @@
     };
 
     var calculator = new Calculator(data)
-    
+
 }());
